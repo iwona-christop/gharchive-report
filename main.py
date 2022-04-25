@@ -55,11 +55,6 @@ def exportReport(fileT, repoName, startDate, endDate, watchEvents, pullRequests)
         f.write('\nwatchEvents,' + str(watchEvents))
         f.write('\npullRequests,' + str(pullRequests))
 
-def txtReport():
-    pass
-
-
-
 
 if __name__ == '__main__':
     startDate, endDate = getDate()
