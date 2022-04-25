@@ -82,7 +82,7 @@ if __name__ == '__main__':
 
     print('\nTo list all available repositories, enter "-list".')
     while ans == '-list':
-        ans = input('Enter repo name: ')
+        ans = input('\nEnter repo name: ')
 
         if ans == '-list':
            availableRepos = df.select('repo.name').distinct().rdd.map(lambda r: r[0]).collect()
@@ -91,11 +91,11 @@ if __name__ == '__main__':
         else:
             repoDF = getRepository(df, ans)
     
-    print("Select format of the report:\n \
+    print("\nSelect format of the report:\n \
         -sc   show report in terminal\n \
         -csv  export to csv\n \
         -txt  export to txt")
-    format = input('Enter selected format: ')
+    format = input('\nEnter selected format: ')
 
     if format == '-sc':
         printReport(ans, startDate, 'x', countStars(repoDF), countPRs(repoDF))
