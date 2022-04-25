@@ -12,7 +12,7 @@ pip install -r requirements.txt
 # python3 -m pip install -r requirements.txt
 ```
 
-## Usage
+## Run
 To use application, go to the project directory and run the following line in terminal:
 ```python
 python3 main.py
