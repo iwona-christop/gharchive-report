@@ -1,6 +1,6 @@
 # Allegro. Data Engineer
 
-An application processing archive of the public GitHub timeline.
+An application processing the archives of the public GitHub timeline.
 
 ## Installation
 Application uses [Python 3](https://www.python.org/downloads/), [PySpark 3.2.1](https://spark.apache.org/docs/latest/api/python/) and [Github Archive Python SDK](https://github.com/nickderobertis/py-gh-archive).
@@ -40,8 +40,8 @@ Application will filter the data by repository name and ask you to choose the fo
 It was chosen mainly because of issues with getting JSON archives directly from [GH Archive](http://www.gharchive.org/).
 
 ## Issues
-As mentioned above, the **Github Archive Python SDK** was used because of issues with gettin archives directly from the [GH Archive](http://www.gharchive.org/). While trying to access the url with PySpark, some of the archives couldn't be received because of the HTTP `403 Forbidden` response status code, which means that the access is permanently forbidden and tied to the application logic, such as insufficient rights to a resource.
+As mentioned above, the **Github Archive Python SDK** was used because of issues with getting archives directly from the [GH Archive](http://www.gharchive.org/). While trying to access the url with PySpark, some of the archives couldn't be received because of the HTTP `403 Forbidden` response status code, which means that the access is permanently forbidden and tied to the application logic, such as insufficient rights to a resource.
 
 Second frustrating issue were the null objects in given `Archive`, which resulted in declaration of Spark's `DataFrame()` schema in the code.
 
-The last problem was less annoying - the data type of `value` in all of the `MapType` fields in the `StructType` had to be changed to `StrinType()` (instead of `LongType()`), because `LongType()` couldn't accept some objects.
+The last problem was less annoying - the data type of `value` in all of the `MapType` fields in the `StructType` had to be changed to `StringType()` (instead of `LongType()`), because `LongType()` couldn't accept some objects.
