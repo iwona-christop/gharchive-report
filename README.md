@@ -1,4 +1,4 @@
-# Allegro. Data Engineer
+# GitHub Archive Report
 
 An application processing the archives of the public GitHub timeline.
 
